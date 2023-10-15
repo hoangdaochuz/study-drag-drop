@@ -5,7 +5,6 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
   const [knightPosition, setKnightPosition] = useState([0, 0]);
-  console.log("🚀 ~ file: App.js:6 ~ App ~ knightPosition:", knightPosition);
   return (
     <div>
       <DndProvider backend={HTML5Backend}>
