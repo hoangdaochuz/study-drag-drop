@@ -4,8 +4,6 @@ import { useDrop } from "react-dnd";
 import { canDrop } from "./helper";
 
 const BoardSquare = ({ x, y, handleSetPosition, knightPosition, children }) => {
-  console.log("🚀 ~ file: BoardSquare.js:7 ~ BoardSquare ~ knightPosition:", knightPosition);
-
   const [{ isOver, isDroppable }, drop] = useDrop(
     () => ({
       accept: "KNIGHT",
@@ -18,10 +16,8 @@ const BoardSquare = ({ x, y, handleSetPosition, knightPosition, children }) => {
         isDroppable: !!monitor.canDrop(),
       }),
     }),
-    [x, y, knightPosition]
+    [knightPosition]
   );
-  console.log("🚀 ~ file: BoardSquare.js:18 ~ BoardSquare ~ isOver:", isOver);
-  console.log("🚀 ~ file: BoardSquare.js:19 ~ BoardSquare ~ isDroppable:", isDroppable);
 
   const isBlack = (x + y) % 2 === 1;
   return (
